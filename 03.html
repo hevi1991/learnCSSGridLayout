@@ -39,6 +39,18 @@
       .box > div:nth-of-type(9) {
         background-color: olive;
       }
+      .box > div:nth-of-type(10) {
+        background-color: wheat;
+      }
+      .box > div:nth-of-type(11) {
+        background-color: gainsboro;
+      }
+      .box > div:nth-of-type(12) {
+        background-color: burlywood;
+      }
+
+
+      /* 循序渐进 */
       .box1 {
         /* 三行三列 */
         grid-template-columns: 33.33% 33.33% 33.33%;
@@ -54,7 +66,39 @@
         grid-template-columns: repeat(2, 100px 20px 80px);
       }
       .box4 {
-        /* auto-fill(类似flex布局的flex-grow) */
+        width: 500px;
+        /* auto-fill以某个宽度为一列，填充至父容器宽度，然后换行*/
+        grid-template-columns: repeat(auto-fill, 100px);
+      }
+      .box5 {
+        /* fr关键字（fraction 片段） ，(屏幕宽度-固定列宽)/fr数为每fr宽 */
+        grid-template-columns: 1fr 1fr;
+      }
+      .box6 {
+        /* fr例子：假设屏幕宽度为1050px，1fr为300px */
+        grid-template-columns: 150px 1fr 2fr;
+      }
+      .box7 {
+        /* minmax函数，产生一个长度范围，例子：第三列不小于200px，不大于1fr */
+        grid-template-columns: 1fr 1fr minmax(200px, 1fr);
+      }
+      .box8 {
+        /* auto关键字，浏览器自己决定长度（有点类似flex布局的flex-grow） */
+        grid-template-columns: 100px auto 100px;
+      }
+      .box9 {
+        /* 网格线名称，用方括号指定网格线名称，方便后续引用 */
+        grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
+        grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];
+      }
+      .box10 {
+        /* 布局实例1：两栏式布局 */
+        grid-template-columns: 70% 30%;
+        height: 300px;
+      }
+      .box11 {
+        /* 布局实例2：12栅格布局 */
+        grid-template-columns: repeat(12, 1fr);
       }
     </style>
   </head>
@@ -113,6 +157,100 @@
         <div>7</div>
         <div>8</div>
         <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box5</h2>
+      <div class="box box5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box6</h2>
+      <div class="box box6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box7</h2>
+      <div class="box box7">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box8</h2>
+      <div class="box box8">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box9</h2>
+      <div class="box box9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box10</h2>
+      <div class="box box10">
+        <div>70%</div>
+        <div>30%</div>
+      </div>
+    </div>
+    <div>
+      <h2>box11</h2>
+      <div class="box box11">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
       </div>
     </div>
   </body>
