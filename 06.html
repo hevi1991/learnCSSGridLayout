@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>3.5</title>
     <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
     <style>
       .box {
@@ -16,6 +16,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100px;
+        min-width: 100px;
       }
       .box > div:nth-of-type(1) {
         background-color: yellow;
@@ -53,14 +54,73 @@
       .box > div:nth-of-type(12) {
         background-color: burlywood;
       }
+
+      .box1 {
+        /* 默认row，先行后列排列 */
+        grid-auto-flow: row;
+      }
+      .box2 {
+        /* 先列后行排列 */
+        grid-auto-flow: column;
+      }
+
+      .box3 {
+        display: inline-grid;
+        grid-auto-flow: row;
+      }
+      .box4 {
+        display: inline-grid;
+        grid-auto-flow: row dense;
+      }
+      .item1,
+      .item2 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
     </style>
   </head>
   <body>
     <div>
-      <h2></h2>
-      <div class="box">
+      <h2>grid-auto-flow</h2>
+      <h3>row</h3>
+      <div class="box box1">
         <div>1</div>
         <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <h3>column</h3>
+      <div class="box box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <h3>左：row，右：row dense; dense尽可能填满空白</h3>
+      <div class="box box3">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box4">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
         <div>3</div>
         <div>4</div>
         <div>5</div>

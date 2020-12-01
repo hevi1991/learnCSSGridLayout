@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.6</title>
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <style>
+      .box {
+        background: #eee;
+        display: inline-grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+      }
+      .box > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box > div:nth-of-type(1) {
+        background-color: yellow;
+      }
+      .box > div:nth-of-type(2) {
+        background-color: orange;
+      }
+      .box > div:nth-of-type(3) {
+        background-color: red;
+      }
+      .box > div:nth-of-type(4) {
+        background-color: cyan;
+      }
+      .box > div:nth-of-type(5) {
+        background-color: blue;
+      }
+      .box > div:nth-of-type(6) {
+        background-color: blueviolet;
+      }
+      .box > div:nth-of-type(7) {
+        background-color: yellowgreen;
+      }
+      .box > div:nth-of-type(8) {
+        background-color: green;
+      }
+      .box > div:nth-of-type(9) {
+        background-color: olive;
+      }
+      .box > div:nth-of-type(10) {
+        background-color: wheat;
+      }
+      .box > div:nth-of-type(11) {
+        background-color: gainsboro;
+      }
+      .box > div:nth-of-type(12) {
+        background-color: burlywood;
+      }
+
+      .box1 {
+        justify-items: start;
+      }
+      .box2 {
+        justify-items: center;
+      }
+      .box3 {
+        justify-items: end;
+      }
+      .box4 {
+        align-items: start;
+      }
+      .box5 {
+        align-items: center;
+      }
+      .box6 {
+        align-items: end;
+      }
+      .box7 {
+        /* 
+        place-items: align-items justify-items; 前面两个属性合写
+        如果只写了一个值，则认为值相同
+        */
+        place-items: end;
+      }
+      .box8 {
+        place-items: center;
+      }
+      .box9 {
+        place-items: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>justify-items、align-items 和 place-items</h2>
+      <ul>
+        <li>
+          值
+          <ul>
+            <li>start 开始边缘</li>
+            <li>end 结束边缘</li>
+            <li>center 居中</li>
+            <li>strech 两边拉满（默认）</li>
+          </ul>
+        </li>
+        <li>justify-items: 单元格水平对齐方式</li>
+        <li>justify-items: 单元格垂直对齐方式</li>
+        <li>place-items: justify-items align-items; 前面两个属性合写</li>
+      </ul>
+    </div>
+    <div>
+      <h2>justify-items演示</h2>
+      <div class="box box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>align-items演示</h2>
+      <div class="box box4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>place-items演示</h2>
+      <div class="box box7">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box8">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="box box9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+  </body>
+</html>

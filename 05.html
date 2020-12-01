@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.4</title>
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <style>
+      .box {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+      }
+      .box > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box > div:nth-of-type(1) {
+        background-color: yellow;
+      }
+      .box > div:nth-of-type(2) {
+        background-color: orange;
+      }
+      .box > div:nth-of-type(3) {
+        background-color: red;
+      }
+      .box > div:nth-of-type(4) {
+        background-color: cyan;
+      }
+      .box > div:nth-of-type(5) {
+        background-color: blue;
+      }
+      .box > div:nth-of-type(6) {
+        background-color: blueviolet;
+      }
+      .box > div:nth-of-type(7) {
+        background-color: yellowgreen;
+      }
+      .box > div:nth-of-type(8) {
+        background-color: green;
+      }
+      .box > div:nth-of-type(9) {
+        background-color: olive;
+      }
+      .box > div:nth-of-type(10) {
+        background-color: wheat;
+      }
+      .box > div:nth-of-type(11) {
+        background-color: gainsboro;
+      }
+      .box > div:nth-of-type(12) {
+        background-color: burlywood;
+      }
+
+      .box1 {
+        /* grid-template-areas 可以给每个单元格命名 */
+        /* 例子：将grid分为a~i，9个区域 */
+        grid-template-areas:
+          "a b c"
+          "d e f"
+          "g h i";
+      }
+      .box2 {
+        /* 区域同名，则意味着同区域 */
+        /* 例子：将9个单元格，划分为3个区域 */
+        grid-template-areas:
+          "a a a"
+          "b b b"
+          "c c c";
+      }
+      .box3 {
+        /* 例子：常见布局实例 */
+        grid-template-areas:
+          "header header header"
+          "main main sidebar"
+          "footer footer footer";
+      }
+      .box4 {
+        /* 如果不需要命名区域，使用.表示 */
+        grid-template-areas:
+          "a . c"
+          "d . e"
+          "f . i";
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>9个区域</h2>
+      <div class="box box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>3个区域</h2>
+      <div class="box box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>布局实例</h2>
+      <div class="box box3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>不需要命名的区域.</h2>
+      <div class="box box4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <pre>
+注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。
+比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。
+    </pre>
+  </body>
+</html>
