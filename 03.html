@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.2</title>
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <style>
+      .box {
+        display: grid;
+      }
+      .box > div {
+        text-align: center;
+      }
+      .box > div:nth-of-type(1) {
+        background-color: yellow;
+      }
+      .box > div:nth-of-type(2) {
+        background-color: orange;
+      }
+      .box > div:nth-of-type(3) {
+        background-color: red;
+      }
+      .box > div:nth-of-type(4) {
+        background-color: cyan;
+      }
+      .box > div:nth-of-type(5) {
+        background-color: blue;
+      }
+      .box > div:nth-of-type(6) {
+        background-color: blueviolet;
+      }
+      .box > div:nth-of-type(7) {
+        background-color: yellowgreen;
+      }
+      .box > div:nth-of-type(8) {
+        background-color: green;
+      }
+      .box > div:nth-of-type(9) {
+        background-color: olive;
+      }
+      .box1 {
+        /* 三行三列 */
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+      }
+      .box2 {
+        /* 使用repeat函数三行三列 */
+        grid-template-columns: repeat(3, 33.33%);
+        grid-template-rows: repeat(3, 33.33%);
+      }
+      .box3 {
+        /* 六列 */
+        grid-template-columns: repeat(2, 100px 20px 80px);
+      }
+      .box4 {
+        /* auto-fill(类似flex布局的flex-grow) */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>box1</h2>
+      <div class="box box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box2</h2>
+      <div class="box box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box3</h2>
+      <div class="box box3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+    <div>
+      <h2>box4</h2>
+      <div class="box box4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </div>
+  </body>
+</html>
